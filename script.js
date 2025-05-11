@@ -156,260 +156,260 @@ document.addEventListener("DOMContentLoaded", () => {
   // For now, we'll create a simple preview function
 
   // Add project upload button to the projects section
-  const projectsSection = document.querySelector(".projects-container")
-  if (projectsSection) {
-    const uploadButton = document.createElement("div")
-    uploadButton.className = "project-upload"
-    uploadButton.innerHTML = `
-      <div class="upload-card">
-        <input type="file" id="projectImage" accept="image/*" style="display: none;">
-        <div class="upload-content">
-          <i class='bx bx-plus-circle'></i>
-          <h3>Add New Project</h3>
-          <p>Click to upload your project</p>
-        </div>
-      </div>
-    `
+  // const projectsSection = document.querySelector(".projects-container")
+  // if (projectsSection) {
+  //   const uploadButton = document.createElement("div")
+  //   uploadButton.className = "project-upload"
+  //   uploadButton.innerHTML = `
+  //     <div class="upload-card">
+  //       <input type="file" id="projectImage" accept="image/*" style="display: none;">
+  //       <div class="upload-content">
+  //         <i class='bx bx-plus-circle'></i>
+  //         <h3>Add New Project</h3>
+  //         <p>Click to upload your project</p>
+  //       </div>
+  //     </div>
+  //   `
 
-    projectsSection.appendChild(uploadButton)
+  //   projectsSection.appendChild(uploadButton)
 
-    // Style the upload card
-    const style = document.createElement("style")
-    style.textContent = `
-      .project-upload {
-        grid-column: 1 / -1;
-        margin-top: 30px;
-      }
-      .upload-card {
-        background: var(--bg-color);
-        border: 2px dashed var(--primary-color);
-        border-radius: 10px;
-        padding: 40px;
-        text-align: center;
-        cursor: pointer;
-        transition: var(--transition);
-      }
-      .upload-card:hover {
-        background: rgba(0, 166, 255, 0.05);
-      }
-      .upload-content i {
-        font-size: 50px;
-        color: var(--primary-color);
-        margin-bottom: 15px;
-      }
-      .upload-content h3 {
-        margin-bottom: 10px;
-      }
-      .project-form {
-        background: var(--second-bg-color);
-        padding: 30px;
-        border-radius: 10px;
-        margin-top: 20px;
-      }
-      .project-form h3 {
-        margin-bottom: 20px;
-        text-align: center;
-      }
-      .form-group {
-        margin-bottom: 15px;
-      }
-      .form-group label {
-        display: block;
-        margin-bottom: 5px;
-        font-weight: 500;
-      }
-      .form-group input, .form-group textarea, .form-group select {
-        width: 100%;
-        padding: 10px;
-        background: var(--bg-color);
-        border: none;
-        border-radius: 5px;
-        color: var(--text-color);
-      }
-      .form-group textarea {
-        height: 100px;
-        resize: none;
-      }
-      .tag-input {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        margin-top: 10px;
-      }
-      .tag {
-        background: rgba(0, 166, 255, 0.1);
-        color: var(--primary-color);
-        padding: 5px 10px;
-        border-radius: 5px;
-        display: flex;
-        align-items: center;
-        gap: 5px;
-      }
-      .tag i {
-        cursor: pointer;
-      }
-      .preview-img {
-        max-width: 100%;
-        max-height: 200px;
-        margin-top: 10px;
-        border-radius: 5px;
-      }
-    `
-    document.head.appendChild(style)
+  //   // Style the upload card
+  //   const style = document.createElement("style")
+  //   style.textContent = `
+  //     .project-upload {
+  //       grid-column: 1 / -1;
+  //       margin-top: 30px;
+  //     }
+  //     .upload-card {
+  //       background: var(--bg-color);
+  //       border: 2px dashed var(--primary-color);
+  //       border-radius: 10px;
+  //       padding: 40px;
+  //       text-align: center;
+  //       cursor: pointer;
+  //       transition: var(--transition);
+  //     }
+  //     .upload-card:hover {
+  //       background: rgba(0, 166, 255, 0.05);
+  //     }
+  //     .upload-content i {
+  //       font-size: 50px;
+  //       color: var(--primary-color);
+  //       margin-bottom: 15px;
+  //     }
+  //     .upload-content h3 {
+  //       margin-bottom: 10px;
+  //     }
+  //     .project-form {
+  //       background: var(--second-bg-color);
+  //       padding: 30px;
+  //       border-radius: 10px;
+  //       margin-top: 20px;
+  //     }
+  //     .project-form h3 {
+  //       margin-bottom: 20px;
+  //       text-align: center;
+  //     }
+  //     .form-group {
+  //       margin-bottom: 15px;
+  //     }
+  //     .form-group label {
+  //       display: block;
+  //       margin-bottom: 5px;
+  //       font-weight: 500;
+  //     }
+  //     .form-group input, .form-group textarea, .form-group select {
+  //       width: 100%;
+  //       padding: 10px;
+  //       background: var(--bg-color);
+  //       border: none;
+  //       border-radius: 5px;
+  //       color: var(--text-color);
+  //     }
+  //     .form-group textarea {
+  //       height: 100px;
+  //       resize: none;
+  //     }
+  //     .tag-input {
+  //       display: flex;
+  //       flex-wrap: wrap;
+  //       gap: 10px;
+  //       margin-top: 10px;
+  //     }
+  //     .tag {
+  //       background: rgba(0, 166, 255, 0.1);
+  //       color: var(--primary-color);
+  //       padding: 5px 10px;
+  //       border-radius: 5px;
+  //       display: flex;
+  //       align-items: center;
+  //       gap: 5px;
+  //     }
+  //     .tag i {
+  //       cursor: pointer;
+  //     }
+  //     .preview-img {
+  //       max-width: 100%;
+  //       max-height: 200px;
+  //       margin-top: 10px;
+  //       border-radius: 5px;
+  //     }
+  //   `
+  //   document.head.appendChild(style)
 
-    // Handle click on upload card
-    const uploadCard = document.querySelector(".upload-card")
-    const fileInput = document.getElementById("projectImage")
+  //   // Handle click on upload card
+  //   const uploadCard = document.querySelector(".upload-card")
+  //   const fileInput = document.getElementById("projectImage")
 
-    uploadCard.addEventListener("click", () => {
-      fileInput.click()
-    })
+  //   uploadCard.addEventListener("click", () => {
+  //     fileInput.click()
+  //   })
 
-    fileInput.addEventListener("change", (e) => {
-      if (e.target.files.length > 0) {
-        const file = e.target.files[0]
+  //   fileInput.addEventListener("change", (e) => {
+  //     if (e.target.files.length > 0) {
+  //       const file = e.target.files[0]
 
-        // Remove upload card
-        uploadButton.remove()
+  //       // Remove upload card
+  //       uploadButton.remove()
 
-        // Create project form
-        const projectForm = document.createElement("div")
-        projectForm.className = "project-form"
-        projectForm.innerHTML = `
-          <h3>Add New Project</h3>
-          <div class="form-group">
-            <label for="projectTitle">Project Title</label>
-            <input type="text" id="projectTitle" placeholder="Enter project title">
-          </div>
-          <div class="form-group">
-            <label for="projectDescription">Project Description</label>
-            <textarea id="projectDescription" placeholder="Enter project description"></textarea>
-          </div>
-          <div class="form-group">
-            <label>Project Image</label>
-            <div id="imagePreview"></div>
-          </div>
-          <div class="form-group">
-            <label>Technologies Used</label>
-            <input type="text" id="tagInput" placeholder="Add a tag and press Enter">
-            <div class="tag-input" id="tagContainer"></div>
-          </div>
-          <div class="form-group">
-            <label for="projectDemo">Demo URL (optional)</label>
-            <input type="url" id="projectDemo" placeholder="https://example.com">
-          </div>
-          <div class="form-group">
-            <label for="projectGithub">GitHub URL (optional)</label>
-            <input type="url" id="projectGithub" placeholder="https://github.com/username/repo">
-          </div>
-          <button type="button" class="btn" id="saveProject">Save Project</button>
-          <button type="button" class="btn btn-secondary" id="cancelProject">Cancel</button>
-        `
+  //       // Create project form
+  //       const projectForm = document.createElement("div")
+  //       projectForm.className = "project-form"
+  //       projectForm.innerHTML = `
+  //         <h3>Add New Project</h3>
+  //         <div class="form-group">
+  //           <label for="projectTitle">Project Title</label>
+  //           <input type="text" id="projectTitle" placeholder="Enter project title">
+  //         </div>
+  //         <div class="form-group">
+  //           <label for="projectDescription">Project Description</label>
+  //           <textarea id="projectDescription" placeholder="Enter project description"></textarea>
+  //         </div>
+  //         <div class="form-group">
+  //           <label>Project Image</label>
+  //           <div id="imagePreview"></div>
+  //         </div>
+  //         <div class="form-group">
+  //           <label>Technologies Used</label>
+  //           <input type="text" id="tagInput" placeholder="Add a tag and press Enter">
+  //           <div class="tag-input" id="tagContainer"></div>
+  //         </div>
+  //         <div class="form-group">
+  //           <label for="projectDemo">Demo URL (optional)</label>
+  //           <input type="url" id="projectDemo" placeholder="https://example.com">
+  //         </div>
+  //         <div class="form-group">
+  //           <label for="projectGithub">GitHub URL (optional)</label>
+  //           <input type="url" id="projectGithub" placeholder="https://github.com/username/repo">
+  //         </div>
+  //         <button type="button" class="btn" id="saveProject">Save Project</button>
+  //         <button type="button" class="btn btn-secondary" id="cancelProject">Cancel</button>
+  //       `
 
-        projectsSection.appendChild(projectForm)
+  //       projectsSection.appendChild(projectForm)
 
-        // Show image preview
-        const imagePreview = document.getElementById("imagePreview")
-        const img = document.createElement("img")
-        img.className = "preview-img"
-        img.src = URL.createObjectURL(file)
-        imagePreview.appendChild(img)
+  //       // Show image preview
+  //       const imagePreview = document.getElementById("imagePreview")
+  //       const img = document.createElement("img")
+  //       img.className = "preview-img"
+  //       img.src = URL.createObjectURL(file)
+  //       imagePreview.appendChild(img)
 
-        // Handle tags
-        const tagInput = document.getElementById("tagInput")
-        const tagContainer = document.getElementById("tagContainer")
-        const tags = []
+  //       // Handle tags
+  //       const tagInput = document.getElementById("tagInput")
+  //       const tagContainer = document.getElementById("tagContainer")
+  //       const tags = []
 
-        tagInput.addEventListener("keydown", (e) => {
-          if (e.key === "Enter") {
-            e.preventDefault()
-            const tag = tagInput.value.trim()
-            if (tag && !tags.includes(tag)) {
-              tags.push(tag)
-              renderTags()
-              tagInput.value = ""
-            }
-          }
-        })
+  //       tagInput.addEventListener("keydown", (e) => {
+  //         if (e.key === "Enter") {
+  //           e.preventDefault()
+  //           const tag = tagInput.value.trim()
+  //           if (tag && !tags.includes(tag)) {
+  //             tags.push(tag)
+  //             renderTags()
+  //             tagInput.value = ""
+  //           }
+  //         }
+  //       })
 
-        function renderTags() {
-          tagContainer.innerHTML = ""
-          tags.forEach((tag, index) => {
-            const tagElement = document.createElement("div")
-            tagElement.className = "tag"
-            tagElement.innerHTML = `
-              ${tag} <i class='bx bx-x' data-index="${index}"></i>
-            `
-            tagContainer.appendChild(tagElement)
-          })
+  //       function renderTags() {
+  //         tagContainer.innerHTML = ""
+  //         tags.forEach((tag, index) => {
+  //           const tagElement = document.createElement("div")
+  //           tagElement.className = "tag"
+  //           tagElement.innerHTML = `
+  //             ${tag} <i class='bx bx-x' data-index="${index}"></i>
+  //           `
+  //           tagContainer.appendChild(tagElement)
+  //         })
 
-          // Add event listeners to remove tags
-          document.querySelectorAll(".tag i").forEach((icon) => {
-            icon.addEventListener("click", (e) => {
-              const index = e.target.dataset.index
-              tags.splice(index, 1)
-              renderTags()
-            })
-          })
-        }
+  //         // Add event listeners to remove tags
+  //         document.querySelectorAll(".tag i").forEach((icon) => {
+  //           icon.addEventListener("click", (e) => {
+  //             const index = e.target.dataset.index
+  //             tags.splice(index, 1)
+  //             renderTags()
+  //           })
+  //         })
+  //       }
 
-        // Handle save project
-        document.getElementById("saveProject").addEventListener("click", () => {
-          const title = document.getElementById("projectTitle").value
-          const description = document.getElementById("projectDescription").value
-          const demoUrl = document.getElementById("projectDemo").value
-          const githubUrl = document.getElementById("projectGithub").value
+  //       // Handle save project
+  //       document.getElementById("saveProject").addEventListener("click", () => {
+  //         const title = document.getElementById("projectTitle").value
+  //         const description = document.getElementById("projectDescription").value
+  //         const demoUrl = document.getElementById("projectDemo").value
+  //         const githubUrl = document.getElementById("projectGithub").value
 
-          if (!title || !description) {
-            alert("Please fill in the required fields")
-            return
-          }
+  //         if (!title || !description) {
+  //           alert("Please fill in the required fields")
+  //           return
+  //         }
 
-          // Create new project card
-          const projectCard = document.createElement("div")
-          projectCard.className = "project-card"
-          projectCard.innerHTML = `
-            <div class="project-img">
-              <img src="${img.src}" alt="${title}">
-            </div>
-            <div class="project-content">
-              <h3>${title}</h3>
-              <p>${description}</p>
-              <div class="project-tags">
-                ${tags.map((tag) => `<span>${tag}</span>`).join("")}
-              </div>
-              <div class="project-links">
-                ${demoUrl ? `<a href="${demoUrl}" class="btn-small" target="_blank"><i class='bx bx-link-external'></i> Live Demo</a>` : ""}
-                ${githubUrl ? `<a href="${githubUrl}" class="btn-small" target="_blank"><i class='bx bxl-github'></i> GitHub</a>` : ""}
-              </div>
-            </div>
-          `
+  //         // Create new project card
+  //         const projectCard = document.createElement("div")
+  //         projectCard.className = "project-card"
+  //         projectCard.innerHTML = `
+  //           <div class="project-img">
+  //             <img src="${img.src}" alt="${title}">
+  //           </div>
+  //           <div class="project-content">
+  //             <h3>${title}</h3>
+  //             <p>${description}</p>
+  //             <div class="project-tags">
+  //               ${tags.map((tag) => `<span>${tag}</span>`).join("")}
+  //             </div>
+  //             <div class="project-links">
+  //               ${demoUrl ? `<a href="${demoUrl}" class="btn-small" target="_blank"><i class='bx bx-link-external'></i> Live Demo</a>` : ""}
+  //               ${githubUrl ? `<a href="${githubUrl}" class="btn-small" target="_blank"><i class='bx bxl-github'></i> GitHub</a>` : ""}
+  //             </div>
+  //           </div>
+  //         `
 
-          // Add the new project card to the beginning of the projects container
-          projectsSection.insertBefore(projectCard, projectsSection.firstChild)
+  //         // Add the new project card to the beginning of the projects container
+  //         projectsSection.insertBefore(projectCard, projectsSection.firstChild)
 
-          // Remove the form
-          projectForm.remove()
+  //         // Remove the form
+  //         projectForm.remove()
 
-          // Add the upload button back
-          projectsSection.appendChild(uploadButton)
+  //         // Add the upload button back
+  //         projectsSection.appendChild(uploadButton)
 
-          // Reset file input
-          fileInput.value = ""
+  //         // Reset file input
+  //         fileInput.value = ""
 
-          // Show success message
-          alert("Project added successfully!")
-        })
+  //         // Show success message
+  //         alert("Project added successfully!")
+  //       })
 
-        // Handle cancel
-        document.getElementById("cancelProject").addEventListener("click", () => {
-          projectForm.remove()
-          projectsSection.appendChild(uploadButton)
-          fileInput.value = ""
-        })
-      }
-    })
-  }
+  //       // Handle cancel
+  //       document.getElementById("cancelProject").addEventListener("click", () => {
+  //         projectForm.remove()
+  //         projectsSection.appendChild(uploadButton)
+  //         fileInput.value = ""
+  //       })
+  //     }
+  //   })
+  // }
 
   // Add animation classes to elements when they come into view
   const animateElements = document.querySelectorAll(".project-card, .cert-card, .contact-item")
